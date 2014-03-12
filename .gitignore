@@ -9,3 +9,12 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+/config/databases.yml
+/.vagrant
+Vagrantfile
+/cookbooks
+coverage
+
+/public/system/
+/public/upload/
