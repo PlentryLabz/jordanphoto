@@ -1,1 +1,1 @@
-web: unicorn_rails start -p 3000
+web: unicorn_rails -p 3000

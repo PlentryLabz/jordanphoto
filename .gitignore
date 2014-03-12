@@ -18,3 +18,5 @@ coverage
 
 /public/system/
 /public/upload/
+
+/bin
