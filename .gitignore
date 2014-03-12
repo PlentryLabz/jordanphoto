@@ -10,7 +10,7 @@
 /log/*.log
 /tmp
 
-/config/databases.yml
+/config/database.yml
 /.vagrant
 Vagrantfile
 /cookbooks
