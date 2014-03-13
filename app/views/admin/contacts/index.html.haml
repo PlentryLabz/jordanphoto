@@ -1,35 +1,17 @@
 .span12
-  .row
-    %h3.span6.page-header= t('.contact_list_title')
-  .row
-    .span2
-      %table.table-striped#contact-list
-        %tbody
-          - @contacts.each do |contact|
-            %tr
-              %td.contact-list-item{id: "#{contact.id}", style: "cursor: pointer;"}
-                = contact.name
-    .span4#show_contact
-
-:javascript
-  $(document).ready(function(){
-    $("#contact-list .contact-list-item").on('click', function() {
-      var contact_id = $(this)[0].id;
-      $.ajax({
-        url: '/admin/contacts/' + contact_id,
-        type: 'GET',
-        data: {id: contact_id},
-        dataType: 'html',
-        async: true,
-
-        success: function(data, textStatus, jqXHR) {
-          $('#show_contact').html(data);
-        },
-        error: function(request, textStatus, errorThrown) {
-          console.log(request);
-          console.log(textStatus);
-          console.log(errorThrown);
-        }
-      });
-    });
-  });
+  %table.table
+    %thead
+      %tr
+        %th= t('activerecord.attributes.contacts.created_at')
+        %th= t('activerecord.attributes.contacts.name')
+        %th= t('activerecord.attributes.contacts.phone')
+        %th= t('activerecord.attributes.contacts.email')
+        %th= t('activerecord.attributes.contacts.message')
+    %tbody
+      - @contacts.each do |contact|
+        %tr
+          %td= contact.created_at.strftime('%x %H:%M')
+          %td= contact.name
+          %td= contact.phone
+          %td= contact.email
+          %td= contact.message

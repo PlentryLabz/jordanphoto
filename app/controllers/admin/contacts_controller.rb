@@ -4,9 +4,4 @@ class Admin::ContactsController < Admin::ApplicationController
     @contacts = Contact.all
   end
 
-  def show
-    @contact = Contact.find(params[:id])
-    render layout: false
-  end
-
 end

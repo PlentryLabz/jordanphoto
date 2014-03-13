@@ -1,0 +1,17 @@
+ru:
+  activerecord:
+    models:
+      user: "Пользователь"
+      contact: "Контакт"
+      review: "Отзыв"
+      photo: "Фото"
+      gallery: "Галерея"
+      topic: "Заметка"
+    attributes:
+      contacts:
+        id: "Id"
+        name: "Имя"
+        email: "Email"
+        phone: "Телефон"
+        created_at: "Дата создания"
+        message: "Сообщение"

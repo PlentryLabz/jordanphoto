@@ -7,9 +7,4 @@ class Admin::ContactsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test '#show' do
-    get :show
-    assert_response :success
-  end
-
 end

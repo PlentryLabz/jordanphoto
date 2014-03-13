@@ -8,7 +8,7 @@ Jordanphoto::Application.routes.draw do
     end
     resources :topics, only: [:index, :create, :edit, :update, :destroy]
     resources :reviews, only: [:index, :create, :edit, :update, :destroy]
-    resources :contacts, only: [:index, :show]
+    resources :contacts, only: [:index]
   end
 
 end
