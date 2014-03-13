@@ -1,0 +1,35 @@
+.span12
+  .row
+    %h3.span6.page-header= t('.contact_list_title')
+  .row
+    .span2
+      %table.table-striped#contact-list
+        %tbody
+          - @contacts.each do |contact|
+            %tr
+              %td.contact-list-item{id: "#{contact.id}", style: "cursor: pointer;"}
+                = contact.name
+    .span4#show_contact
+
+:javascript
+  $(document).ready(function(){
+    $("#contact-list .contact-list-item").on('click', function() {
+      var contact_id = $(this)[0].id;
+      $.ajax({
+        url: '/admin/contacts/' + contact_id,
+        type: 'GET',
+        data: {id: contact_id},
+        dataType: 'html',
+        async: true,
+
+        success: function(data, textStatus, jqXHR) {
+          $('#show_contact').html(data);
+        },
+        error: function(request, textStatus, errorThrown) {
+          console.log(request);
+          console.log(textStatus);
+          console.log(errorThrown);
+        }
+      });
+    });
+  });

@@ -1,0 +1,7 @@
+ru:
+  layouts:
+    header:
+      galleries_link: "Портфолио"
+      topics_link: "Блог"
+      reviews_link: "Отзывы"
+      contacts_link: "Контакты"

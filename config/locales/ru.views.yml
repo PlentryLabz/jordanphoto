@@ -1,0 +1,8 @@
+ru:
+  admin:
+    wellcome:
+      show:
+        wellcome_title: "Админка сайта"
+    contacts:
+      index:
+        contact_list_title: "Контакты"

@@ -1,4 +1,4 @@
-class Admin::WellcomeController < ApplicationController
+class Admin::WellcomeController < Admin::ApplicationController
 
   def show
   end
