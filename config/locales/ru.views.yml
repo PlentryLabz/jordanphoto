@@ -6,3 +6,9 @@ ru:
     contacts:
       index:
         contact_list_title: "Контакты"
+    reviews:
+      index:
+        review_list_titile: "Отзывы"
+        add_review_link: "Добавить отзыв"
+      new:
+        new_review_btn: "Добавить"

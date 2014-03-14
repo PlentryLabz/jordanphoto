@@ -17,6 +17,6 @@ Vagrantfile
 coverage
 
 /public/system/
-/public/upload/
+/public/uploads/
 
 /bin

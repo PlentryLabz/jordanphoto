@@ -15,3 +15,8 @@ ru:
         phone: "Телефон"
         created_at: "Дата создания"
         message: "Сообщение"
+      reviews:
+        id: "Id"
+        title: "Заголовок"
+        body: "Тело отзыва"
+        pic: "Картинка"

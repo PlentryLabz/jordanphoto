@@ -3,11 +3,11 @@ Jordanphoto::Application.routes.draw do
   namespace :admin do
     root to: 'wellcome#show'
     resource :wellcome, only: [:show]
-    resources :gallaries, only: [:index, :create, :edit, :update] do
+    resources :gallaries do
       resources :photos, only: [:index]
     end
-    resources :topics, only: [:index, :create, :edit, :update, :destroy]
-    resources :reviews, only: [:index, :create, :edit, :update, :destroy]
+    resources :topics
+    resources :reviews
     resources :contacts, only: [:index]
   end
 
