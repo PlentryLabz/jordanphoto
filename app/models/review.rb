@@ -3,7 +3,7 @@ class Review < ActiveRecord::Base
 
   validates :title, presence: true
   validates :body, presence: true
-  validates :pic, presence: true
+  # validates :pic, presence: true
 
   mount_uploader :pic, ReviewsUploader
 

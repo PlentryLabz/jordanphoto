@@ -12,3 +12,6 @@ ru:
         add_review_link: "Добавить отзыв"
       new:
         new_review_btn: "Добавить"
+      edit:
+        edit_review_btn: "Изменить"
+        delete_link: "Удалить отзыв"

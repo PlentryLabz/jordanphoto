@@ -7,4 +7,14 @@ class Admin::ReviewsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test '#new' do
+    get :new
+    assert_response :success
+  end
+
+  test '#index' do
+    get :edit
+    assert_response :success
+  end
+
 end
