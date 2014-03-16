@@ -1,0 +1,41 @@
+.span12
+  .row
+    %h3.span8.page-header= t('.gallaries_list_title')
+  .row
+    .span12
+      %ul.thumbnails
+        %li.span3
+          =link_to '#new-gallary-form', class: 'thumbnail', id: 'new-gallary-link' do
+            = image_tag 'logo.png', style: "height: 280px"
+            %h4.caption= t('.new_gallary_label')
+
+        - @gallaries.each do |gal|
+          %li.span3
+            = link_to edit_admin_gallary_path(gal), class: 'thumbnail' do
+              = image_tag gal.pic, style: "height: 280px"
+              %h4.caption= gal.title
+  .row
+    .span8.page-header
+      #new-gallary-form
+
+:javascript
+  $(document).ready(function(){
+    $("#new-gallary-link").on('click', function() {
+      $.ajax({
+        url: '/admin/gallaries/new',
+        type: 'GET',
+        dataType: 'html',
+        async: true,
+
+        success: function(data, textStatus, jqXHR) {
+          $('#new-gallary-form').html(data);
+          $('#new-gallary-form').scrollIntoView(true);
+        },
+        error: function(request, textStatus, errorThrown) {
+          console.log(request);
+          console.log(textStatus);
+          console.log(errorThrown);
+        }
+      });
+    });
+  });

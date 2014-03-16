@@ -20,3 +20,8 @@ ru:
         title: "Заголовок"
         body: "Тело отзыва"
         pic: "Картинка"
+      gallaries:
+        id: "Id"
+        title: "Заголовок"
+        description: "Описание"
+        pic: "Картинка"

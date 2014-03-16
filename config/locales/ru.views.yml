@@ -15,3 +15,10 @@ ru:
       edit:
         edit_review_btn: "Изменить"
         delete_link: "Удалить отзыв"
+    gallaries:
+      index:
+        gallaries_list_title: "Портфолио"
+        new_gallary_label: "Создать каталог"
+      new:
+        new_gallary_btn: "Создать"
+        new_gallary_title: "Новый каталог"
