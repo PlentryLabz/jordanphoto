@@ -6,4 +6,6 @@ class Gallary < ActiveRecord::Base
   validates :pic, presence: true
 
   mount_uploader :pic, GallariesUploader
+
+  has_many :photos, dependent: :destroy
 end

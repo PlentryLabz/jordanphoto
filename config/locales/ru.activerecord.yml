@@ -22,6 +22,6 @@ ru:
         pic: "Картинка"
       gallaries:
         id: "Id"
-        title: "Заголовок"
+        title: "Название"
         description: "Описание"
         pic: "Картинка"

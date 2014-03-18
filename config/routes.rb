@@ -4,7 +4,9 @@ Jordanphoto::Application.routes.draw do
     root to: 'wellcome#show'
     resource :wellcome, only: [:show]
     resources :gallaries do
-      resources :photos, only: [:index]
+      scope module: :gallaries do
+        resources :photos, only: [:create, :index]
+      end
     end
     resources :topics
     resources :reviews

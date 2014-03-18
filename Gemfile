@@ -50,6 +50,11 @@ gem "therubyracer"
 gem "twitter-bootstrap-rails"
 gem 'simple_form'
 
+gem "jquery-fileupload-rails"
+gem 'rails-gallery'
+gem 'aws-sdk'
+gem 's3_direct_upload'
+
 gem 'unicorn'
 gem 'foreman'
 

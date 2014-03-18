@@ -22,3 +22,8 @@ ru:
       new:
         new_gallary_btn: "Создать"
         new_gallary_title: "Новый каталог"
+      edit:
+        edit_gallary_btn: "Изменить"
+        gallary_edit_title: "Редактирование каталога"
+        photos_title: "Фотографии"
+        add_photos: "Добавить фото"

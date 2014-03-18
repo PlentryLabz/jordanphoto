@@ -32,6 +32,10 @@ GEM
       activerecord (>= 3.0.0)
     arel (3.0.3)
     awesome_print (1.2.0)
+    aws-sdk (1.36.1)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     backports (3.3.3)
     bcrypt-ruby (3.0.1)
     better_errors (1.0.1)
@@ -98,9 +102,13 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
+    hashie (2.0.5)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
+    jquery-fileupload-rails (0.4.1)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -129,7 +137,10 @@ GEM
     mime-types (1.25.1)
     mini_magick (3.6.0)
       subexec (~> 0.2.1)
+    mini_portile (0.5.2)
     multi_json (1.9.0)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
     pg (0.17.0)
     polyamorous (0.6.3)
       activerecord (>= 3.0)
@@ -155,6 +166,9 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
+    rails-gallery (0.3.3)
+      hashie (>= 2.0.0)
+      rails (>= 3.1)
     railties (3.2.13)
       actionpack (= 3.2.13)
       activesupport (= 3.2.13)
@@ -178,6 +192,11 @@ GEM
     rest-client (1.6.7)
       mime-types (>= 1.16)
     ruby-prof (0.13.0)
+    s3_direct_upload (0.1.7)
+      coffee-rails (>= 3.1)
+      jquery-fileupload-rails (~> 0.4.1)
+      rails (>= 3.1)
+      sass-rails (>= 3.1)
     sass (3.3.2)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -226,6 +245,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    uuidtools (2.1.4)
     validates (0.0.8)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -239,6 +259,7 @@ PLATFORMS
 DEPENDENCIES
   ancestry
   awesome_print
+  aws-sdk
   bcrypt-ruby (~> 3.0.0)
   better_errors
   binding_of_caller
@@ -253,6 +274,7 @@ DEPENDENCIES
   guard-spring
   guard-test
   haml-rails
+  jquery-fileupload-rails
   jquery-rails
   kaminari
   kaminari-bootstrap
@@ -261,9 +283,11 @@ DEPENDENCIES
   pg
   pry
   rails (= 3.2.13)
+  rails-gallery
   ransack
   rb-readline (~> 0.4.2)
   ruby-prof
+  s3_direct_upload
   sass-rails (~> 3.2.3)
   simple_form
   simplecov

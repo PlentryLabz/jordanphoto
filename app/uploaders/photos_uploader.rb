@@ -1,0 +1,3 @@
+class PhotosUploader < ApplicationUploader
+
+end
