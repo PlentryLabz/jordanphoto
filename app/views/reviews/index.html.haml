@@ -1,0 +1,17 @@
+.span12
+  .row
+    %h3.span6.page-header= t('.reviews_page_title')
+  .row
+    #reviews-list
+      - @reviews.each do |review|
+        .row.review
+          %h4= review.title
+          = link_to review.pic.url, title: review.title do
+            = image_tag review.pic.preview, width: 250, style: 'float: left; margin-right: 20px;'
+          #custom-text
+            %p= review.body
+
+:javascript
+  $(function () {
+    $('#reviews-list a').touchTouch();
+  });

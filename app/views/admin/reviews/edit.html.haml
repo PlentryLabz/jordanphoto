@@ -1,7 +1,7 @@
 = simple_form_for @review, url: admin_review_path(@review), method: :put do |f|
   = f.input :title, label: t('activerecord.attributes.reviews.title'), required: false
   = f.input :body, as: :text, input_html: {rows: 5, style: 'width: 100%'}, label: t('activerecord.attributes.reviews.body'), required: false
-  = image_tag @review.pic, class: 'thumbnail'
+  = image_tag @review.pic.preview, class: 'thumbnail'
   = f.input :pic, type: :file, label: t('activerecord.attributes.reviews.pic'), required: false
 
   = f.button :submit, t('.edit_review_btn'), class: 'btn'

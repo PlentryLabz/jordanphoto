@@ -37,3 +37,14 @@ ru:
       edit:
         edit_topic_btn: "Изменить"
         delete_link: "Удалить заметку"
+  pages:
+    about:
+      about_page_title: "Обо мне"
+  reviews:
+    index:
+      reviews_page_title: "Отзывы"
+  contacts:
+    new:
+      contacts_page_title: "Контакты"
+      new_contact_btn: "Отправить"
+      new_contact_form: "Форма для контактов"

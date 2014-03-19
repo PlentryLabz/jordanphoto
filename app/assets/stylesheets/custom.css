@@ -1,0 +1,12 @@
+/*
+  *= require gallery/touch_touch
+*/
+#custom-text p {
+  font-size: 15px;
+  width: 700px;
+  margin-bottom: 12px;
+}
+
+.review {
+  margin-bottom: 20px;
+}

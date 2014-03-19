@@ -36,6 +36,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'ancestry'
 gem "cocoon"
+gem 'high_voltage', '~> 2.1.0'
 gem 'heroku'
 
 gem 'jquery-rails'

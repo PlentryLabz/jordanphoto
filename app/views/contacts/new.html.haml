@@ -1,0 +1,27 @@
+.span12
+  .row
+    %h3.page-header= t('.contacts_page_title')
+  .row
+    = image_tag 'contacts_pic.png', width: 250, style: 'float: left; margin-right: 20px;'
+    #custom-text
+      %p
+        Вы можете связаться со мной удобным для Вас способом: отправить сообщение по электронной почте или позвонить по телефону:
+      %p.phone-number
+        +7 984 564 84 51
+      %p
+        Я с удовольствием отвечу на любые Ваши вопросы связанные с занятостью и деталями фотосъёмки.
+      %p
+        Если Вы не смогли дозвониться, но заинтересованы в проведении фотосъемки вашего торжества, или хотите заказать фотографа для фотосессии, то оставьте предварительную заявку, заполнив электронную форму для контактов ниже.
+      %p
+        Для меня дорог каждый, кто проявил интерес к моим услугам или моему творчеству, и поэтому Ваше сообщение не останется без ответа.
+  .row
+    %h4.page-header= t('.new_contact_form')
+  .row
+    #new-contact-form
+      = simple_form_for @contact, url: contacts_path, method: :post do |f|
+        = f.input :name, label: t('activerecord.attributes.contacts.name'), required: false
+        = f.input :phone, label: t('activerecord.attributes.contacts.phone'), required: false
+        = f.input :email, label: t('activerecord.attributes.contacts.email'), required: false
+        = f.input :message, as: :text, input_html: {rows: 5, style: 'width: 50%'}, label: t('activerecord.attributes.contacts.message'), required: false
+
+        = f.button :submit, t('.new_contact_btn'), class: 'btn'

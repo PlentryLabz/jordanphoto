@@ -1,7 +1,16 @@
 ru:
   layouts:
+    admin:
+      header:
+        galleries_link: "Портфолио"
+        topics_link: "Блог"
+        reviews_link: "Отзывы"
+        contacts_link: "Контакты"
     header:
-      galleries_link: "Портфолио"
+      main_link: "Главная"
+      gallaries_link: "Портфолио"
       topics_link: "Блог"
+      about_link: "Обо мне"
       reviews_link: "Отзывы"
       contacts_link: "Контакты"
+      sitemap_link: "Карта сайта"

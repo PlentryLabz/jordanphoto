@@ -1,12 +1,25 @@
-%header
-.navbar
-  .navbar-inner
-    %ul.nav
-      %li
-        = link_to t('.galleries_link'), admin_gallaries_path
-      %li
-        = link_to t('.topics_link'), admin_topics_path
-      %li
-        = link_to t('.reviews_link'), admin_reviews_path
-      %li
-        = link_to t('.contacts_link'), admin_contacts_path
+.navbar.navbar-default
+  .container
+    .navbar-header
+      = link_to root_path, class: 'navbar-brand' do
+        = image_tag 'logo_main.png'
+    #navbar-main.navbar-collapse.collapse
+      .row
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to '#' do
+              = image_tag 'vk_link.png', style: 'width: 25px;'
+          %li
+            = link_to '#' do
+              = image_tag 'fb_link.png', style: 'width: 25px;'
+          %li
+            = link_to '#' do
+              = image_tag 'tw_link.png', style: 'width: 25px;'
+      .row
+        %ul.nav.navbar-nav.navbar-right
+          %li= link_to t('.main_link'), page_path(:main)
+          %li= link_to t('.gallaries_link'), gallaries_path
+          %li= link_to t('.topics_link'), topics_path
+          %li= link_to t('.about_link'), page_path(:about)
+          %li= link_to t('.reviews_link'), reviews_path
+          %li= link_to t('.contacts_link'), new_contact_path

@@ -13,4 +13,9 @@ Jordanphoto::Application.routes.draw do
     resources :contacts, only: [:index]
   end
 
+  root to: 'high_voltage/pages#show', id: 'main'
+  resources :gallaries, only: [:index, :show]
+  resources :topics, only: [:index, :show]
+  resources :contacts, only: [:new, :create]
+  resources :reviews, only: [:index]
 end
