@@ -46,7 +46,6 @@ gem 'kaminari'
 gem 'kaminari-bootstrap'
 
 gem 'haml-rails'
-gem "therubyracer"
 gem "twitter-bootstrap-rails"
 gem 'simple_form'
 
