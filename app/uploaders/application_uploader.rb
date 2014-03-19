@@ -16,6 +16,6 @@ class ApplicationUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-    file.extension.to_s if original_filename.present?
+    original_filename.present? ? original_filename : file.extension.to_s
   end
 end

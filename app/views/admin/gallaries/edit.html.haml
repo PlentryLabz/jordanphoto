@@ -9,7 +9,7 @@
       = simple_form_for @gallary, url: admin_gallary_path(@gallary), methode: :put do |f|
         = f.input :title, label: t('activerecord.attributes.gallaries.title'), required: false
         = f.input :description, as: :text, input_html: {rows: 5, style: 'width: 100%'}, label: t('activerecord.attributes.gallaries.description'), required: false
-        = image_tag @gallary.pic
+        = image_tag @gallary.pic, class: 'thumbnail'
         = f.input :pic, type: :file, label: t('activerecord.attributes.gallaries.pic'), required: false
 
         =f.button :submit, t('.edit_gallary_btn'), class: 'btn'
@@ -24,21 +24,47 @@
               %i.icon-plus.icon-white
               %span= t('.add_photos')
               = f.file_field :pic, multiple: true
-    .span12
-      %ul.thumbnails#photos-list
-        - @photos.each do |photo|
-          %li.span
-            = link_to photo.pic.url, class: 'thumbnail' do
-              = image_tag photo.pic, style: "height: 200px"
+    .span9
+      %table.table#photos-list
+        %tbody
+          - @photos.each do |photo|
+            %tr.photos-list-item{id: "line-#{photo.id}"}
+              %td
+                = link_to photo.pic.url, class: 'thumbnail', style: "float: left;" do
+                  = image_tag photo.pic, style: "height: 200px"
+              %td
+                = photo.pic.url
+              %td
+                = "#{'%.2f' % (photo.pic.size / 1024.0)} KB"
+              %td
+                = link_to admin_gallary_photo_path(@gallary, photo), method: :delete, remote: true, class: 'delete-link', id: "#{photo.id}" do
+                  %span.btn.btn-danger
+                    %i.icon-trash.icon-white
+                    %span= t('.delete_photos')
 
 :javascript
   $(function () {
-    $('#photos-list a').touchTouch();
+    var new_item, td, a;
+
+    $('#photos-list a.thumbnail').touchTouch();
+
+    $('#photos-list .delete-link').on('click', function() {
+      $('#photos-list .photos-list-item#line-' + $(this)[0].id).html("");
+    });
+
     $('#fileupload').fileupload({
       dataType: 'json',
       done: function (e, data) {
-        $('#photos-list').append("<li><span><a href='" + data.result.url +"' class='thumbnail'><img src='" + data.result.url + "' style='height: 200px;'/></a></span></li>");
-        $('#photos-list a').touchTouch();
+
+        new_item = $("<tr class='photos-list-item'/>");
+        td = $('<td/>').appendTo(new_item);
+        a = $("<a href=" + data.result.url + " class='thumbnail' style='float: left;'/>").appendTo(td);
+        a.append("<img src="+data.result.url+" style='height: 200px;'/>");
+        td = $('<td>'+data.result.url+'</td>').appendTo(new_item);
+        td = $('<td>'+data.result.size+'</td>').appendTo(new_item);
+
+        $('#photos-list tbody').append(new_item);
+        $('#photos-list a.thumbnail').touchTouch();
       }
     });
   });

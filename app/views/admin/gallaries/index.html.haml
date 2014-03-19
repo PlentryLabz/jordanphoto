@@ -13,7 +13,7 @@
           %li.span3
             = link_to edit_admin_gallary_path(gal), class: 'thumbnail' do
               = image_tag gal.pic, style: "height: 280px"
-              %h4.caption= gal.title
+              %h4.caption= "#{gal.title} (#{gal.photos.count})"
   .row
     .span8.page-header
       #new-gallary-form

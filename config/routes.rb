@@ -5,7 +5,7 @@ Jordanphoto::Application.routes.draw do
     resource :wellcome, only: [:show]
     resources :gallaries do
       scope module: :gallaries do
-        resources :photos, only: [:create, :index]
+        resources :photos, only: [:create, :destroy]
       end
     end
     resources :topics

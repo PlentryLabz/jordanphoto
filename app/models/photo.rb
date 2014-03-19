@@ -10,7 +10,7 @@ class Photo < ActiveRecord::Base
   def to_jq_upload
     {
       "name" => read_attribute(:pic),
-      "size" => pic.size,
+      "size" => "#{'%.2f' % (pic.size / 1024.0)} KB",
       "url" => pic.url,
       "delete_url" => id,
       "picture_id" => id,
