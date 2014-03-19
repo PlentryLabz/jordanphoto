@@ -28,3 +28,12 @@ ru:
         photos_title: "Фотографии"
         add_photos: "Добавить фото"
         delete_photos: "Удалить"
+    topics:
+      index:
+        topic_list_titile: "Блог"
+        add_topic_link: "Добавить заметку"
+      new:
+        new_topic_btn: "Добавить"
+      edit:
+        edit_topic_btn: "Изменить"
+        delete_link: "Удалить заметку"

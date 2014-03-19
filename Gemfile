@@ -52,6 +52,7 @@ gem 'simple_form'
 
 gem "jquery-fileupload-rails"
 gem 'rails-gallery'
+gem 'bootstrap-wysihtml5-rails'
 gem 'aws-sdk'
 gem 's3_direct_upload'
 

@@ -25,3 +25,7 @@ ru:
         title: "Название"
         description: "Описание"
         pic: "Картинка"
+      topics:
+        id: "Id"
+        title: "Заголовок"
+        bidy: "Тело заметки"

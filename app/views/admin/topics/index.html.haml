@@ -1,0 +1,41 @@
+.span12
+  .row
+    %h3.span6.page-header= t('.topic_list_title')
+  .row
+    %table.table-striped.span2#topic-list
+      %tbody
+        %tr.topic-list-item#add-link
+          %td= link_to t('.add_topic_link'), '#'
+        - @topics.each do |topic|
+          %tr.topic-list-item{id: "#{topic.id}"}
+            %td= topic.title
+    .span7#show-topic
+
+:javascript
+  $(document).ready(function(){
+    $("#topic-list .topic-list-item").on('click', function() {
+      var id = $(this)[0].id;
+      var url;
+      if (id == 'add-link') {
+        url = '/admin/topics/new';
+      } else {
+        url = '/admin/topics/' + id + '/edit';
+      }
+      $.ajax({
+        url: url,
+        type: 'GET',
+        data: {id: id},
+        dataType: 'html',
+        async: true,
+
+        success: function(data, textStatus, jqXHR) {
+          $('#show-topic').html(data);
+        },
+        error: function(request, textStatus, errorThrown) {
+          console.log(request);
+          console.log(textStatus);
+          console.log(errorThrown);
+        }
+      });
+    });
+  });

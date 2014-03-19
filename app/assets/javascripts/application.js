@@ -16,6 +16,7 @@
 //= require twitter/bootstrap
 
 //= require gallery/touch_touch
+//= require bootstrap-wysihtml5
 //= require jquery/jquery.easing-1.3
 //= require jquery/jquery.elastislide
 //= require jquery/jquery.tmpl.min

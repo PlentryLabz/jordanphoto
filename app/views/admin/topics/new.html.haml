@@ -1,0 +1,12 @@
+= simple_form_for @topic, url: admin_topics_path, method: :post do |f|
+  = f.input :title, label: t('activerecord.attributes.topics.title'), required: false
+  = f.input :body, as: :text, input_html: {rows: 15, style: 'width: 100%', class: 'wysihtml5'}, label: t('activerecord.attributes.topics.body'), required: false, placeholder: "Enter text ..."
+
+  = f.button :submit, t('.new_topic_btn'), class: 'btn'
+
+:javascript
+  $(document).ready(function(){
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5();
+    });
+  })
