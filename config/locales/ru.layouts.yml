@@ -13,4 +13,5 @@ ru:
       about_link: "Обо мне"
       reviews_link: "Отзывы"
       contacts_link: "Контакты"
-      sitemap_link: "Карта сайта"
+    footer:
+      sitemap_page_link: "Карта сайта"

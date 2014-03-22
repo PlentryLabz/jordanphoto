@@ -14,14 +14,42 @@
         Если Вы не смогли дозвониться, но заинтересованы в проведении фотосъемки вашего торжества, или хотите заказать фотографа для фотосессии, то оставьте предварительную заявку, заполнив электронную форму для контактов ниже.
       %p
         Для меня дорог каждый, кто проявил интерес к моим услугам или моему творчеству, и поэтому Ваше сообщение не останется без ответа.
-  .row
-    %h4.page-header= t('.new_contact_form')
-  .row
-    #new-contact-form
-      = simple_form_for @contact, url: contacts_path, method: :post do |f|
-        = f.input :name, label: t('activerecord.attributes.contacts.name'), required: false
-        = f.input :phone, label: t('activerecord.attributes.contacts.phone'), required: false
-        = f.input :email, label: t('activerecord.attributes.contacts.email'), required: false
-        = f.input :message, as: :text, input_html: {rows: 5, style: 'width: 50%'}, label: t('activerecord.attributes.contacts.message'), required: false
 
-        = f.button :submit, t('.new_contact_btn'), class: 'btn'
+    .col-lg-7.well.bs-component#new-contact-form-field
+      .form-horizontal
+        = simple_form_for @contact, url: contacts_path, method: :post, html: {id: 'new-contact-form'},remote: true do |f|
+          %fieldset
+            %legend= t('.new_contact_form')
+            .form-group
+              %label.col-lg-2.control-label
+                = f.label t('activerecord.attributes.contacts.name')
+              .col-lg-10
+                = f.input :name, input_html: {class: 'form-control', style: 'width: 75%'}, label: false, required: false
+            .form-group
+              %label.col-lg-2.control-label
+                = f.label t('activerecord.attributes.contacts.phone')
+              .col-lg-10
+                = f.input :phone, input_html: {class: 'form-control', style: 'width: 75%'}, label: false, required: false
+            .form-group
+              %label.col-lg-2.control-label
+                = f.label t('activerecord.attributes.contacts.email')
+              .col-lg-10
+                = f.input :email, input_html: {class: 'form-control', style: 'width: 75%'}, label: false, required: false
+            .form-group
+              %label.col-lg-2.control-label
+                = f.label t('activerecord.attributes.contacts.message')
+              .col-lg-10
+                = f.input :message, as: :text, input_html: {rows: 5, style: 'width: 100%', class: 'form-control'}, label: false, required: false
+
+            .form-group
+              .col-lg-10.col-lg-offset-2
+                = f.button :submit, t('.new_contact_btn'), class: 'btn'
+:javascript
+  $('form#new-contact-form').bind('ajax:error', function(event, request, settings) {
+    $('#new-contact-form-field').html("<div class='alert alert-dismissable alert-danger'><strong>Извините, что-то пошло не так.</strong> Контакт не удалось сохранить. Проверьте, пожалуйста, правильно ли заполнены все поля.</div>");
+    $('.alert-danger').delay(200).animate({opacity: 1}, 700);
+  });
+  $('form#new-contact-form').bind('ajax:success', function(evt, data, status, xhr){
+    $('#new-contact-form-field').html("<div class='alert alert-dismissable alert-success'><strong>Спасибо!</strong> Я обязательно свяжусь с Вами в ближайшее время!</div>");
+    $('.alert-success').delay(200).animate({opacity: 1}, 700);
+  })

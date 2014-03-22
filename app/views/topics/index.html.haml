@@ -1,0 +1,8 @@
+.span12
+  - @topics.each do |topic|
+    .row
+      %h3.span6.page-header= topic.title
+    .row
+      #custom-text
+        %p
+          = topic.body.html_safe

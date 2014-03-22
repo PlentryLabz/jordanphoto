@@ -1,0 +1,10 @@
+.span12
+  .row
+    %h3.page-header= t('.sitemap_page_title')
+  .row
+    %ul
+      %li= link_to t('.gallaries_link'), gallaries_path
+      %li= link_to t('.topics_link'), topics_path
+      %li= link_to t('.about_link'), page_path(:about)
+      %li= link_to t('.reviews_link'), reviews_path
+      %li= link_to t('.contacts_link'), new_contact_path

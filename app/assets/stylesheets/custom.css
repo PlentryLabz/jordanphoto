@@ -10,3 +10,31 @@
 .review {
   margin-bottom: 20px;
 }
+
+.alert-danger,
+.alert-success {
+  opacity: 0;
+}
+
+.panel-footer p {
+  color: #999999;
+}
+
+.photo-pic,
+.gallary-pic {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.main-column {
+  margin-top: 15px;
+  width: 31%;
+  margin-left: 20px;
+}
+
+.main-column-title {
+  border-bottom-color: #4e5d6c;
+  padding-bottom: 9.5px;
+  margin: 10px 0 18px;
+  border-bottom: 1px solid #ebebeb;
+}

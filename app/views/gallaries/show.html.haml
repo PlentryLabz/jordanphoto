@@ -1,0 +1,17 @@
+.span12
+  .row
+    %h3.page-header= @gallary.title
+  .row
+    #custom-text
+      %p
+        = @gallary.description
+  .row
+    .col-lg-9#photos-list
+      - @photos.each do |ph|
+        = link_to ph.pic.url do
+          = image_tag ph.pic, height: 280, class: 'photo-pic'
+
+:javascript
+  $(function () {
+    $('#photos-list a').touchTouch();
+  });

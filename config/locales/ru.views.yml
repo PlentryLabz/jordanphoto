@@ -30,7 +30,7 @@ ru:
         delete_photos: "Удалить"
     topics:
       index:
-        topic_list_titile: "Блог"
+        topic_list_title: "Блог"
         add_topic_link: "Добавить заметку"
       new:
         new_topic_btn: "Добавить"
@@ -40,6 +40,15 @@ ru:
   pages:
     about:
       about_page_title: "Обо мне"
+    sitemap:
+      sitemap_page_title: "Карта сайта"
+      gallaries_link: "Портфолио"
+      topics_link: "Блог"
+      about_link: "Обо мне"
+      reviews_link: "Отзывы"
+      contacts_link: "Контакты"
+    main:
+      main_page_title: "Сайт профессионального фотографа Артема Джордана"
   reviews:
     index:
       reviews_page_title: "Отзывы"
@@ -48,3 +57,7 @@ ru:
       contacts_page_title: "Контакты"
       new_contact_btn: "Отправить"
       new_contact_form: "Форма для контактов"
+  gallaries:
+    index:
+      gallaries_page_title: "Портфолио"
+    show:
