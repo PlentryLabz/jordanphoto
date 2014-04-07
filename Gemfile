@@ -26,6 +26,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   gem 'uglifier', '>= 1.0.3'
+  gem "rails-backbone"
 end
 
 gem 'bcrypt-ruby', '~> 3.0.0'
@@ -38,6 +39,8 @@ gem 'ancestry'
 gem "cocoon"
 gem 'high_voltage', '~> 2.1.0'
 gem 'heroku'
+
+gem 'jbuilder'
 
 gem 'jquery-rails'
 gem 'execjs'

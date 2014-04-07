@@ -1,0 +1,48 @@
+<div class="page">
+  asd
+</div>
+
+<script type="text/javascript">
+
+  // $.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
+  //     options.url = 'localhost:3000' + options.url;
+  //   });
+
+  var Review = Backbone.Model.extend({
+    defaults : {
+      'name' : 'Megan Fox'
+    }
+  })
+
+  var ReviewsList = Backbone.Collection.extend({
+    url : "/api/admin/reviews",
+    initialize : function () {
+    }
+  });
+
+  var ReviewsView = Backbone.View.extend({
+    render : function () {
+      var reviews = new ReviewsList();
+      reviews.fetch();
+      console.log(reviews);
+    }
+  })
+
+  var Router = Backbone.Router.extend({
+    routes: {
+      "" : "reviews"
+    },
+    reviews: function() {
+      var page = new ReviewsView();
+      page.render();
+    },
+    initialize: function (options) {
+          console.log('Controller is created!');
+    },
+
+  });
+
+  var router = new Router();
+
+  Backbone.history.start();
+</script>

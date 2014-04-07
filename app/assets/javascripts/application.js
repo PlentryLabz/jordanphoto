@@ -21,4 +21,9 @@
 //= require jquery/jquery.elastislide
 //= require jquery/jquery.tmpl.min
 
+//= require underscore
+//= require backbone
+//= require backbone_rails_sync
+//= require backbone_datalink
+//= require backbone/jordanphoto
 //= require_tree .
