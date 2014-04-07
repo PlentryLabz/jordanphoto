@@ -1,3 +1,1 @@
-json.array! @reviews do |review|
-  json.id review.id
-end
+json.reviews @reviews, :id, :title, :body

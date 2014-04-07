@@ -1,4 +1,4 @@
-class TopicsController < ApplicationController
+class Web::TopicsController < Web::ApplicationController
 
   def index
     @topics = Topic.all

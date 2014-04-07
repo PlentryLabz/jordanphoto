@@ -1,4 +1,4 @@
-class GallariesController < ApplicationController
+class Web::GallariesController < Web::ApplicationController
 
   def index
     @gallaries = Gallary.all
