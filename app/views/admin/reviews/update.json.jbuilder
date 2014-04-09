@@ -1,0 +1,1 @@
+json.review @review, :id, :title, :body

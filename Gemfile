@@ -41,6 +41,7 @@ gem 'high_voltage', '~> 2.1.0'
 gem 'heroku'
 
 gem 'jbuilder'
+gem 'gon'
 
 gem 'jquery-rails'
 gem 'execjs'

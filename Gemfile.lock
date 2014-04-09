@@ -88,6 +88,9 @@ GEM
       dotenv (>= 0.7)
       thor (>= 0.13.6)
     formatador (0.2.4)
+    gon (4.0.2)
+      actionpack (>= 2.3.0)
+      json
     guard (2.1.1)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -297,6 +300,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.0)
   faker
   foreman
+  gon
   guard-spring
   guard-test
   haml-rails

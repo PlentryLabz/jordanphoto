@@ -1,13 +1,5 @@
 Jordanphoto::Application.routes.draw do
 
-  namespace :api do
-    namespace :admin do
-      resources :topics, defaults: { format: 'json' }
-      resources :reviews, defaults: { format: 'json' }
-      resources :contacts, defaults: { format: 'json' }
-    end
-  end
-
   namespace :admin do
     root to: 'wellcome#show'
     resource :wellcome, only: [:show]
